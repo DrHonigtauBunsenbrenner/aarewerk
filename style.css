@@ -68,7 +68,7 @@ footer.site{padding:2.2rem 0;font-size:.95rem;color:var(--muted)}
 .hero-card{background:rgba(255,255,255,.75);backdrop-filter:blur(6px);border:1px solid var(--line);border-radius:18px;padding:1.6rem 1.8rem;box-shadow:var(--shadow);display:none}
 .hero-card ul{list-style:none;margin:0;padding:0}.hero-card li{display:flex;flex-direction:column;padding:.8rem 0;border-top:1px solid var(--line)}.hero-card li:first-child{border-top:0}
 .hero-card strong{font-family:Fraunces,serif;font-size:1.25rem;font-weight:600}.hero-card span{color:var(--muted);font-size:.95rem}
-@media (min-width:1100px){.hero-grid{grid-template-columns:minmax(0,52rem)}.hero-card{display:block}}
+@media (min-width:1100px){.hero-grid{grid-template-columns:minmax(0,1fr)}.hero-card{display:block}}
 @media (min-width:1400px){:root{--max:1320px}.facts{grid-template-columns:repeat(3,1fr)}}
 @media (min-width:1800px){:root{--max:1520px}body{font-size:18px}.grid3{gap:2rem}}
 @media (min-width:2400px){:root{--max:1760px}body{font-size:19px}}
@@ -90,3 +90,4 @@ section{padding:6rem 0}section.alt{background:#efeee8}
 ol.steps li{border-top:1px solid #cfd5d0;padding-top:3.6rem}ol.steps li::before{top:1rem;width:2rem;height:2rem;font-size:.9rem}
 .menu a{transition:background-size .4s ease}
 @media (max-width:860px){#pakete .pkg+.pkg{border-left:0}#pakete .pkg{padding:1.4rem 1rem}section{padding:4rem 0}#leistungen .grid3{gap:1.5rem}}
+.hero .lead{max-width:62ch}
