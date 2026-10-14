@@ -26,11 +26,8 @@ section+section{border-top:1px solid var(--line)}
 section[id]{padding:clamp(3.5rem,8vw,6.5rem) 0}
 .two{display:grid;gap:1.5rem 4rem}
 @media(min-width:900px){.two{grid-template-columns:minmax(0,1fr) minmax(0,2fr)}}
-.list{margin:0;display:grid;gap:.3rem 3rem}
-@media(min-width:700px){.list{grid-template-columns:repeat(2,minmax(0,1fr))}}
-dt{font-weight:600;margin-top:1.2rem}.list dt:nth-of-type(-n+2){margin-top:0}
-@media(max-width:699px){.list dt:nth-of-type(2){margin-top:1.2rem}}
-dd{margin:0 0 .4rem;color:var(--muted)}
+.list{margin:0;max-width:60ch}dt{font-weight:600;margin-top:1.6rem}dt:first-child{margin-top:0}
+dd{margin:.2rem 0 0;color:var(--muted)}
 .steps{margin:0;padding-left:1.3rem;display:grid;gap:1.1rem;max-width:60ch}
 .steps strong{font-weight:600}
 .prose{max-width:60ch}.prose p{margin:0 0 1.1rem}
