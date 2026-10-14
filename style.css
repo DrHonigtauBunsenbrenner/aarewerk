@@ -72,3 +72,21 @@ footer.site{padding:2.2rem 0;font-size:.95rem;color:var(--muted)}
 @media (min-width:1400px){:root{--max:1320px}.facts{grid-template-columns:repeat(3,1fr)}}
 @media (min-width:1800px){:root{--max:1520px}body{font-size:18px}.grid3{gap:2rem}}
 @media (min-width:2400px){:root{--max:1760px}body{font-size:19px}}
+/* v3 editorial */
+h1{letter-spacing:-.02em;line-height:1.08}h2{line-height:1.15}body{line-height:1.7}
+section{padding:6rem 0}section.alt{background:#efeee8}
+.card,.card:hover{background:transparent;border:0;border-radius:0;box-shadow:none;transform:none;padding:1.4rem 0 0;border-top:1px solid #cfd5d0}
+#leistungen .grid3{gap:3rem}#leistungen .card h3{font-size:1.35rem;margin-top:.2rem}
+.icon{background:none;width:auto;height:auto;margin-bottom:.6rem;justify-content:start}
+#pakete .grid3{gap:0}#pakete .pkg{padding:1.6rem 1.6rem 1.2rem;border-top:2px solid var(--ink);border-radius:0}
+#pakete .pkg+.pkg{border-left:1px solid #d5dad5}
+#pakete .pkg:nth-child(2){background:#e4eeeb}
+.rows li{border-top:1px solid #dde2dc}
+.btn,.btn:hover{transform:none;box-shadow:none;border-radius:6px;transition:background-color .3s ease,color .3s ease}
+.ref .shot,.ref .shot:hover{transform:none;border-radius:6px;box-shadow:0 30px 60px -40px rgba(12,42,51,.35)}
+.hero-card{background:transparent;backdrop-filter:none;border:0;border-left:1px solid #c9d3cf;border-radius:0;box-shadow:none;padding:.4rem 0 .4rem 2rem}
+.contact{border-radius:8px}
+.facts{border-top:1px solid #cfd5d0;padding-top:1.4rem}
+ol.steps li{border-top:1px solid #cfd5d0;padding-top:3.6rem}ol.steps li::before{top:1rem;width:2rem;height:2rem;font-size:.9rem}
+.menu a{transition:background-size .4s ease}
+@media (max-width:860px){#pakete .pkg+.pkg{border-left:0}#pakete .pkg{padding:1.4rem 1rem}section{padding:4rem 0}#leistungen .grid3{gap:1.5rem}}

@@ -49,3 +49,14 @@ section{scroll-margin-top:72px}
 @media (min-width:1400px){:root{--max:1320px}}
 @media (min-width:1800px){:root{--max:1520px}body{font-size:18px}}
 @media (min-width:2400px){:root{--max:1760px}}
+/* v3 editorial */
+body{line-height:1.7}h1{line-height:1.05;letter-spacing:-.01em}
+section{padding:5.5rem 0}section.alt{background:#f2ebe1}
+.card{background:transparent;border:0;border-radius:0;padding:1.2rem 0 0;border-top:1px solid #d9c9b6}
+.cards{gap:3rem}.card h3{font-size:1.4rem}
+.quote.card{border-top:0;border-left:2px solid var(--accent);padding:0 0 0 1.6rem;font-size:1.3rem}
+.art{border-radius:6px;box-shadow:0 30px 60px -40px rgba(60,30,10,.45)}
+.btn{border-radius:6px;transition:background-color .3s ease,color .3s ease}
+.badge{background:none;padding:0;letter-spacing:.08em;text-transform:uppercase;font-size:.8rem}
+.menu-list li{border-bottom:1px solid #e3d7c8}
+input,select,textarea{border-radius:4px;border-color:#d4c4b1}
