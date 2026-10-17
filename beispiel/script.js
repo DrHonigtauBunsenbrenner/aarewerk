@@ -12,7 +12,7 @@
       e.preventDefault();
       var s=document.getElementById('status');
       if(!f.checkValidity()){f.reportValidity();return;}
-      s.textContent='Danke! Dies ist eine Demo – Ihre Anfrage wurde nicht versendet.';
+      s.textContent='Danke. Dies ist eine Demo, Ihre Anfrage wurde nicht versendet.';
       f.reset();
     });
   }
