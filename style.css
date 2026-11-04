@@ -96,7 +96,8 @@ ol.steps li{border-top:1px solid #cfd5d0;padding-top:3.6rem}ol.steps li::before{
 .yearcost{margin-top:2rem;padding:1.4rem 1.6rem;background:var(--card);border:2px solid var(--accent);border-radius:12px}
 .yearcost h3{margin:0 0 .6rem}.yearcost p{margin:.3rem 0}.yearcost .note{color:var(--muted);font-size:.95rem}
 .mailline{margin-top:1rem;color:var(--muted)}.mailline a{color:var(--accent);font-weight:600}
-.about{display:grid;grid-template-columns:1fr;gap:2rem;align-items:center}
+.about-page{display:grid;grid-template-columns:1fr;gap:2rem;padding:3.5rem 1.5rem}
 .about-photo{display:none}
-.about p{max-width:65ch}
+.about-page p{max-width:65ch}
 .contact :focus-visible{outline-color:#f1dcae}
+@media (max-width:600px){.menu-wide{display:none}}
