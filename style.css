@@ -174,3 +174,28 @@ ol.steps li{border-top:1px solid #cfd5d0;padding-top:3.6rem}ol.steps li::before{
 .nav-js .menu .menu-wide{display:block}
 }
 @media (max-width:760px){h1{overflow-wrap:break-word;hyphens:auto}}
+/* Technik-Satz */
+.tech-note{margin:2.2rem 0 0;color:var(--muted);font-size:.98rem}
+/* Anfrageformular */
+.form-wrap{margin-top:3rem;max-width:760px}
+.form-intro{color:var(--muted);margin:0 0 1.5rem}
+.anfrage{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem 1.5rem}
+.anfrage .field{display:flex;flex-direction:column;gap:.35rem;min-width:0;margin:0;padding:0;border:0}
+.anfrage .field-full,.anfrage fieldset{grid-column:1/-1}
+.anfrage label,.anfrage legend{font-weight:600;font-size:.95rem;padding:0}
+.anfrage .req{color:var(--accent)}
+.anfrage input[type=text],.anfrage input[type=email],.anfrage select,.anfrage textarea{width:100%;font:inherit;font-size:1rem;color:var(--ink);background:var(--card);border:1px solid #c9d0cb;border-radius:6px;padding:.7rem .8rem;transition:border-color .2s ease}
+.anfrage textarea{resize:vertical;min-height:8rem}
+.anfrage input:focus-visible,.anfrage select:focus-visible,.anfrage textarea:focus-visible{outline:3px solid var(--gold);outline-offset:1px;border-color:var(--accent)}
+.anfrage [aria-invalid=true]{border-color:#a3362b}
+.anfrage .err{margin:0;color:#a3362b;font-size:.9rem;min-height:0}.anfrage .err:empty{display:none}
+.anfrage fieldset{flex-direction:row;flex-wrap:wrap;gap:.4rem 1.5rem}.anfrage legend{margin-bottom:.35rem;width:100%}
+.anfrage .opt{font-weight:400;display:inline-flex;align-items:center;gap:.45rem;cursor:pointer}
+.anfrage .opt input{width:1.1rem;height:1.1rem;accent-color:var(--accent);margin:0}
+.anfrage .privacy{margin:0;font-size:.9rem;color:var(--muted)}
+.anfrage .form-actions{display:flex;flex-wrap:wrap;align-items:center;gap:1rem}
+.anfrage button.btn{border:0;font:inherit;font-weight:600;cursor:pointer}
+.anfrage .form-status{margin:0;font-size:.95rem;color:var(--muted)}
+.hp{position:absolute!important;left:-9999px;width:1px;height:1px;overflow:hidden}
+@media (max-width:640px){.anfrage{grid-template-columns:1fr}.anfrage .form-actions .btn{width:100%}}
+@media (prefers-reduced-motion:no-preference){.anfrage .err:not(:empty){animation:err-in .25s ease both}@keyframes err-in{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}}
