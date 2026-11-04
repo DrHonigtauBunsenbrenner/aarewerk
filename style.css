@@ -1,6 +1,6 @@
 @font-face{font-family:Inter;src:url(fonts/inter.woff2) format("woff2");font-weight:100 900;font-display:swap}
 @font-face{font-family:Fraunces;src:url(fonts/fraunces.woff2) format("woff2");font-weight:100 900;font-display:swap}
-:root{--bg:#f6f5f1;--ink:#14232a;--muted:#4c5d64;--accent:#0f5c66;--accent-2:#1b7f8a;--gold:#b98b3e;--line:#dfe3df;--card:#fff;--deep:#0c2a33;--max:1100px;--shadow:0 1px 2px rgba(12,42,51,.06),0 12px 32px -12px rgba(12,42,51,.18)}
+:root{--bg:#f6f5f1;--ink:#14232a;--muted:#4c5d64;--accent:#0f5c66;--accent-2:#1b7f8a;--gold:#9a7230;--line:#dfe3df;--card:#fff;--deep:#0c2a33;--max:1100px;--shadow:0 1px 2px rgba(12,42,51,.06),0 12px 32px -12px rgba(12,42,51,.18)}
 *{box-sizing:border-box}html{scroll-behavior:smooth}
 body{margin:0;font:17px/1.65 Inter,system-ui,sans-serif;color:var(--ink);background:var(--bg);-webkit-font-smoothing:antialiased}
 img{max-width:100%;height:auto;display:block}
@@ -91,3 +91,12 @@ ol.steps li{border-top:1px solid #cfd5d0;padding-top:3.6rem}ol.steps li::before{
 .menu a{transition:background-size .4s ease}
 @media (max-width:860px){#pakete .pkg+.pkg{border-left:0}#pakete .pkg{padding:1.4rem 1rem}section{padding:4rem 0}#leistungen .grid3{gap:1.5rem}}
 .hero .lead{max-width:62ch}
+.price-alt{margin:-.4rem 0 .6rem;font-weight:600;color:var(--accent)}
+.badge{display:inline-block;margin:0 0 1rem;padding:.25rem .7rem;border-radius:999px;background:#dcebe8;color:var(--deep);font-size:.9rem;font-weight:600}
+.yearcost{margin-top:2rem;padding:1.4rem 1.6rem;background:var(--card);border:2px solid var(--accent);border-radius:12px}
+.yearcost h3{margin:0 0 .6rem}.yearcost p{margin:.3rem 0}.yearcost .note{color:var(--muted);font-size:.95rem}
+.mailline{margin-top:1rem;color:var(--muted)}.mailline a{color:var(--accent);font-weight:600}
+.about{display:grid;grid-template-columns:1fr;gap:2rem;align-items:center}
+.about-photo{display:none}
+.about p{max-width:65ch}
+.contact :focus-visible{outline-color:#f1dcae}
