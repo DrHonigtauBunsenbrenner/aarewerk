@@ -103,7 +103,7 @@ ol.steps li{border-top:1px solid #cfd5d0;padding-top:3.6rem}ol.steps li::before{
 @media (max-width:600px){.menu-wide{display:none}}
 .hero{background:var(--deep)}
 .hero-bg img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 55%}
-.hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,26,32,.70) 0%,rgba(8,26,32,.74) 55%,rgba(8,26,32,.84) 100%)}
+
 .hero .waves{z-index:1}
 .hero h1{color:#fff}
 .hero .lead{color:#eef3f3}
@@ -125,3 +125,28 @@ ol.steps li{border-top:1px solid #cfd5d0;padding-top:3.6rem}ol.steps li::before{
 .about-photo{display:block;width:200px;height:200px}
 .about-photo img{width:200px;height:200px;border-radius:50%;object-fit:cover;display:block}
 @media (min-width:860px){.about-page{grid-template-columns:240px 1fr;align-items:start}.about-photo,.about-photo img{width:240px;height:240px}}
+
+.hero-bg{position:absolute;inset:0;display:block;overflow:hidden}
+.hero-shade,.hero-glow{position:absolute;inset:0;pointer-events:none}
+.hero-shade{background:linear-gradient(180deg,rgba(8,26,32,.64) 0%,rgba(8,26,32,.64) 55%,rgba(8,26,32,.78) 100%)}
+.hero-glow{background:radial-gradient(60% 45% at 68% 52%,rgba(255,176,92,.35),transparent 70%);opacity:.7}
+.fade.d4{animation-delay:.38s}
+.pkg{position:relative}
+.pkg::before{content:"";position:absolute;left:0;right:0;top:-2px;height:2px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .45s cubic-bezier(.2,.7,.2,1)}
+@media (prefers-reduced-motion:no-preference){
+.hero-bg img{animation:kenburns 28s ease-in-out infinite alternate;will-change:transform}
+@keyframes kenburns{from{transform:scale(1.06) translate3d(0,0,0)}to{transform:scale(1.16) translate3d(-2%,-1.5%,0)}}
+.hero-glow{animation:glow 14s ease-in-out infinite alternate}
+@keyframes glow{from{opacity:.45;transform:translate3d(-3%,1%,0)}to{opacity:.9;transform:translate3d(3%,-1%,0)}}
+@supports (animation-timeline:scroll()){
+.hero-bg{animation:hero-par linear both;animation-timeline:scroll(root);animation-range:0 100vh}
+@keyframes hero-par{to{transform:translate3d(0,22%,0)}}
+}
+.js-anim .reveal{opacity:0;transform:translate3d(0,18px,0);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+.js-anim .reveal.in{opacity:1;transform:none}
+.card.pkg{transition:opacity .7s ease,transform .35s ease}
+.card.pkg:hover{transform:translate3d(0,-4px,0)}
+.card.pkg:hover::before{transform:scaleX(1)}
+.btn{transition:background-color .3s ease,color .3s ease,transform .25s ease}
+.btn:hover{transform:translate3d(0,-2px,0)}
+}
