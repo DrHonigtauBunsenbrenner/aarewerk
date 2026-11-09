@@ -115,7 +115,7 @@ ol.steps li{border-top:1px solid #cfd5d0;padding-top:3.6rem}ol.steps li::before{
 .band{margin:0;height:clamp(200px,30vw,400px);overflow:hidden;position:relative}
 .band img{display:block;width:100%;height:100%;object-fit:cover}
 .band-weg img{object-position:center 60%}
-.band-see img{object-position:center 75%}
+.band-see img{object-position:center 52%}
 @media (prefers-reduced-motion:no-preference){@supports (animation-timeline:view()){
 .band img{height:116%;margin-top:-8%;animation:band-pan linear both;animation-timeline:view()}
 @keyframes band-pan{from{transform:translateY(-7%)}to{transform:translateY(7%)}}
