@@ -1,7 +1,7 @@
 (function(){
-  /* Ziel des Formulars: '' = mailto-Fallback. Später z.B. 'https://anbieter.example/f/abc' eintragen,
-     dann wird per POST (fetch) an diesen Endpunkt gesendet. */
-  var FORM_ENDPOINT='';
+  /* Web3Forms: Access Key ist absichtlich oeffentlich (Client-seitig). */
+  var FORM_ENDPOINT='https://api.web3forms.com/submit';
+  var ACCESS_KEY='cbfa8012-7820-4758-90d1-a0b012d9cf58';
   var ADDR='kontakt@uferwerk.ch';
   var f=document.getElementById('anfrage');if(!f)return;
   var status=f.querySelector('.form-status');
@@ -20,20 +20,32 @@
     e.preventDefault();
     var okN=check(f.elements.name),okM=check(f.elements.email);
     if(!okN||!okM){(okN?f.elements.email:f.elements.name).focus();return;}
-    if(f.elements.website.value)return; /* Honeypot */
+    if(f.elements.website.value)return; /* eigenes Honeypot */
     var d={name:f.elements.name.value.trim(),email:f.elements.email.value.trim(),projekt:(f.querySelector('input[name=projekt]:checked')||{}).value||'',paket:f.elements.paket.value,nachricht:f.elements.nachricht.value.trim()};
-    if(FORM_ENDPOINT){
-      status.textContent='Wird gesendet …';
-      fetch(FORM_ENDPOINT,{method:'POST',headers:{'Accept':'application/json'},body:new FormData(f)}).then(function(r){
-        if(!r.ok)throw 0;f.reset();status.textContent='Vielen Dank. Ihre Anfrage ist angekommen.';
-      }).catch(function(){status.textContent='Das Senden hat nicht geklappt. Schreiben Sie bitte direkt an '+ADDR+'.';});
-      return;
-    }
-    var subject='Anfrage: '+d.paket+' – '+d.name;
-    var body='Guten Tag Herr Eschenbacher\r\n\r\nName / Betrieb oder Verein: '+d.name+'\r\nE-Mail: '+d.email+'\r\nProjekt: '+d.projekt+'\r\nPaket: '+d.paket+'\r\n\r\nNachricht:\r\n'+(d.nachricht||'-')+'\r\n\r\nFreundliche Grüsse\r\n'+d.name+'\r\n';
-    var href='mailto:'+ADDR+'?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
-    status.textContent='Ihr Mailprogramm öffnet sich mit der vorbereiteten Nachricht. Bitte senden Sie sie dort ab. Falls nichts geschieht: Schreiben Sie an '+ADDR+'.';
-    f.dataset.mailto=href;
-    window.location.href=href;
+    var payload={
+      access_key:ACCESS_KEY,
+      subject:'Anfrage: '+d.paket+' – '+d.name,
+      from_name:'Uferwerk Website',
+      name:d.name,
+      email:d.email,
+      projekt:d.projekt,
+      paket:d.paket,
+      nachricht:d.nachricht,
+      botcheck:''
+    };
+    status.textContent='Wird gesendet …';
+    fetch(FORM_ENDPOINT,{
+      method:'POST',
+      headers:{'Content-Type':'application/json','Accept':'application/json'},
+      body:JSON.stringify(payload)
+    }).then(function(r){
+      return r.json().then(function(j){
+        if(!r.ok||!j||j.success!==true)throw 0;
+        f.reset();
+        status.textContent='Vielen Dank. Ihre Anfrage ist angekommen.';
+      },function(){throw 0;});
+    }).catch(function(){
+      status.textContent='Das Senden hat nicht geklappt. Schreiben Sie bitte direkt an '+ADDR+'.';
+    });
   });
 })();
