@@ -199,3 +199,6 @@ ol.steps li{border-top:1px solid #cfd5d0;padding-top:3.6rem}ol.steps li::before{
 .hp{position:absolute!important;left:-9999px;width:1px;height:1px;overflow:hidden}
 @media (max-width:640px){.anfrage{grid-template-columns:1fr}.anfrage .form-actions .btn{width:100%}}
 @media (prefers-reduced-motion:no-preference){.anfrage .err:not(:empty){animation:err-in .25s ease both}@keyframes err-in{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}}
+
+.anfrage .optional{font-weight:400;color:var(--muted,#5b6570)}
+.anfrage textarea::placeholder{color:#8a929a;opacity:1}
