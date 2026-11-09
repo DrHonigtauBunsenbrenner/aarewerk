@@ -202,3 +202,4 @@ ol.steps li{border-top:1px solid #cfd5d0;padding-top:3.6rem}ol.steps li::before{
 
 .anfrage .optional{font-weight:400;color:var(--muted,#5b6570)}
 .anfrage textarea::placeholder{color:#8a929a;opacity:1}
+@media (min-width:1400px){.band-see{height:320px}}
