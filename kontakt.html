@@ -6,8 +6,12 @@
 <div class="field"><label for="f-paket">Paket</label><select id="f-paket" name="paket"><option>Paket S</option><option>Paket M</option><option selected>Noch unsicher</option></select></div>
 <div class="field-full radio-row">
 <fieldset class="field"><legend>Projekt</legend><label class="opt"><input type="radio" name="projekt" value="Neue Website" checked> Neue Website</label><label class="opt"><input type="radio" name="projekt" value="Alte Website ersetzen"> Alte Website ersetzen</label></fieldset>
-<fieldset class="field"><legend>Texte und Bilder</legend><label class="opt"><input type="radio" name="inhalte" value="Habe ich bereit" checked> Habe ich bereit</label><label class="opt"><input type="radio" name="inhalte" value="Notizen sind vorhanden"> Notizen sind vorhanden</label><label class="opt"><input type="radio" name="inhalte" value="Ich brauche Hilfe"> Ich brauche Hilfe</label></fieldset>
-<fieldset class="field"><legend>Zeitrahmen</legend><label class="opt"><input type="radio" name="zeitrahmen" value="In den nächsten 1–2 Monaten" checked> In den nächsten 1–2 Monaten</label><label class="opt"><input type="radio" name="zeitrahmen" value="Kein Zeitdruck"> Kein Zeitdruck</label><label class="opt"><input type="radio" name="zeitrahmen" value="Noch offen"> Noch offen</label></fieldset>
+<fieldset class="field"><legend>Texte und Bilder</legend><label class="opt"><input type="radio" name="inhalte" value="Habe ich bereit"> Habe ich bereit</label><label class="opt"><input type="radio" name="inhalte" value="Notizen sind vorhanden"> Notizen sind vorhanden</label><label class="opt"><input type="radio" name="inhalte" value="Ich brauche Hilfe"> Ich brauche Hilfe</label></fieldset>
+<div class="field termin-field">
+<label for="termin">Gewünscht fertig bis <span class="optional">(optional)</span></label>
+<input type="date" name="termin" id="termin">
+<label class="opt" for="kein_termin"><input type="checkbox" name="kein_termin" id="kein_termin" value="1"> Kein fester Termin</label>
+</div>
 </div>
 <div class="field field-full"><label for="f-msg">Nachricht <span class="optional">(optional)</span></label><textarea id="f-msg" name="nachricht" rows="5" placeholder="Haben Sie schon eine Vorstellung, wie Ihre Website aussehen soll?"></textarea></div>
 <div class="hp" aria-hidden="true"><label for="f-web">Website (bitte leer lassen)</label><input id="f-web" name="website" type="text" tabindex="-1" autocomplete="off"></div>

@@ -184,7 +184,7 @@ ol.steps li{border-top:1px solid #cfd5d0;padding-top:3.6rem}ol.steps li::before{
 .anfrage .field-full{grid-column:1/-1}
 .anfrage label,.anfrage legend{font-weight:600;font-size:.95rem;padding:0}
 .anfrage .req{color:var(--accent)}
-.anfrage input[type=text],.anfrage input[type=email],.anfrage select,.anfrage textarea{width:100%;font:inherit;font-size:1rem;color:var(--ink);background:var(--card);border:1px solid #c9d0cb;border-radius:6px;padding:.7rem .8rem;transition:border-color .2s ease}
+.anfrage input[type=text],.anfrage input[type=email],.anfrage input[type=date],.anfrage select,.anfrage textarea{width:100%;font:inherit;font-size:1rem;color:var(--ink);background:var(--card);border:1px solid #c9d0cb;border-radius:6px;padding:.7rem .8rem;transition:border-color .2s ease}
 .anfrage textarea{resize:vertical;min-height:8rem}
 .anfrage input:focus-visible,.anfrage select:focus-visible,.anfrage textarea:focus-visible{outline:3px solid var(--gold);outline-offset:1px;border-color:var(--accent)}
 .anfrage [aria-invalid=true]{border-color:#a3362b}
@@ -204,6 +204,10 @@ ol.steps li{border-top:1px solid #cfd5d0;padding-top:3.6rem}ol.steps li::before{
 .anfrage .radio-row{grid-column:1/-1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.1rem 1.5rem;align-items:start}
 .anfrage .radio-row fieldset{min-width:0}
 .anfrage .radio-row .opt{display:flex;width:100%}
+.anfrage .termin-field{gap:.5rem}
+.anfrage .termin-field .opt{margin-top:.15rem}
+.anfrage input[type=date]:disabled{opacity:.55;cursor:not-allowed;background:#eef1ef}
+
 @media (max-width:860px){.anfrage .radio-row{grid-template-columns:1fr}}
 
 .anfrage textarea::placeholder{color:#8a929a;opacity:1}
