@@ -21,7 +21,7 @@
     var okN=check(f.elements.name),okM=check(f.elements.email);
     if(!okN||!okM){(okN?f.elements.email:f.elements.name).focus();return;}
     if(f.elements.website.value)return; /* eigenes Honeypot */
-    var d={name:f.elements.name.value.trim(),email:f.elements.email.value.trim(),projekt:(f.querySelector('input[name=projekt]:checked')||{}).value||'',paket:f.elements.paket.value,nachricht:f.elements.nachricht.value.trim()};
+    var d={name:f.elements.name.value.trim(),email:f.elements.email.value.trim(),projekt:(f.querySelector('input[name=projekt]:checked')||{}).value||'',paket:f.elements.paket.value,inhalte:(f.querySelector('input[name=inhalte]:checked')||{}).value||'',zeitrahmen:(f.querySelector('input[name=zeitrahmen]:checked')||{}).value||'',nachricht:f.elements.nachricht.value.trim()};
     var payload={
       access_key:ACCESS_KEY,
       subject:'Anfrage: '+d.paket+' – '+d.name,
@@ -30,6 +30,8 @@
       email:d.email,
       projekt:d.projekt,
       paket:d.paket,
+      inhalte:d.inhalte,
+      zeitrahmen:d.zeitrahmen,
       nachricht:d.nachricht,
       botcheck:''
     };

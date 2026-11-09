@@ -181,7 +181,7 @@ ol.steps li{border-top:1px solid #cfd5d0;padding-top:3.6rem}ol.steps li::before{
 .form-intro{color:var(--muted);margin:0 0 1.5rem}
 .anfrage{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem 1.5rem}
 .anfrage .field{display:flex;flex-direction:column;gap:.35rem;min-width:0;margin:0;padding:0;border:0}
-.anfrage .field-full,.anfrage fieldset{grid-column:1/-1}
+.anfrage .field-full{grid-column:1/-1}
 .anfrage label,.anfrage legend{font-weight:600;font-size:.95rem;padding:0}
 .anfrage .req{color:var(--accent)}
 .anfrage input[type=text],.anfrage input[type=email],.anfrage select,.anfrage textarea{width:100%;font:inherit;font-size:1rem;color:var(--ink);background:var(--card);border:1px solid #c9d0cb;border-radius:6px;padding:.7rem .8rem;transition:border-color .2s ease}
@@ -201,5 +201,10 @@ ol.steps li{border-top:1px solid #cfd5d0;padding-top:3.6rem}ol.steps li::before{
 @media (prefers-reduced-motion:no-preference){.anfrage .err:not(:empty){animation:err-in .25s ease both}@keyframes err-in{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}}
 
 .anfrage .optional{font-weight:400;color:var(--muted,#5b6570)}
+.anfrage .radio-row{grid-column:1/-1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.1rem 1.5rem;align-items:start}
+.anfrage .radio-row fieldset{min-width:0}
+.anfrage .radio-row .opt{display:flex;width:100%}
+@media (max-width:860px){.anfrage .radio-row{grid-template-columns:1fr}}
+
 .anfrage textarea::placeholder{color:#8a929a;opacity:1}
 @media (min-width:1400px){.band-see{height:320px}}
