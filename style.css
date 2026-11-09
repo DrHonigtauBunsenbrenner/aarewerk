@@ -93,8 +93,8 @@ ol.steps li{border-top:1px solid #cfd5d0;padding-top:3.6rem}ol.steps li::before{
 .hero .lead{max-width:62ch}
 .price-alt{margin:-.4rem 0 .6rem;font-weight:600;color:var(--accent)}
 .badge{display:inline-block;margin:0 0 1rem;padding:.25rem .7rem;border-radius:999px;background:#dcebe8;color:var(--deep);font-size:.9rem;font-weight:600}
-.yearcost{margin-top:2rem;padding:1.4rem 1.6rem;background:var(--card);border:2px solid var(--accent);border-radius:12px}
-.yearcost h3{margin:0 0 .6rem}.yearcost p{margin:.3rem 0}.yearcost .note{color:var(--muted);font-size:.95rem}
+.yearcost{margin-top:2rem;padding-top:1.2rem;border-top:1px solid #cfd5d0;color:var(--muted);font-size:.97rem}
+.yearcost h3{margin:0 0 .4rem;font-size:1rem;color:var(--ink)}.yearcost p{margin:.2rem 0}.yearcost strong{color:var(--ink);font-weight:600}.yearcost .note{font-size:.92rem}
 .mailline{margin-top:1rem;color:var(--muted)}.mailline a{color:var(--accent);font-weight:600}
 .about-page{display:grid;grid-template-columns:1fr;gap:2rem;padding:3.5rem 1.5rem}
 .about-photo{display:none}
