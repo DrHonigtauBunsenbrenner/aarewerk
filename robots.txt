@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
+Disallow: /vorschau/
 Sitemap: https://uferwerk.ch/sitemap.xml

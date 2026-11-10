@@ -1,0 +1,2 @@
+Geist (Vercel) und Fraunces (Undercase Type) stehen unter der SIL Open Font License 1.1.
+Beide Schriften sind lokal eingebunden (Teilmenge Latin, woff2).
