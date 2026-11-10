@@ -10,6 +10,7 @@
   if (reduce.addEventListener) reduce.addEventListener('change', syncReduce);
   else if (reduce.addListener) reduce.addListener(syncReduce);
 
+  var mobile = window.matchMedia('(max-width: 600px)');
   var hero = document.querySelector('.hero');
   var heroBg = document.querySelector('.hero-bg');
   if (hero) {
@@ -73,9 +74,13 @@
     var vh = window.innerHeight || 1;
 
     if (parallaxReady && heroBg && hero && !reduce.matches) {
-      var heroH = hero.offsetHeight || 1;
-      var y = Math.min(scrollY, heroH) * 0.28;
-      heroBg.style.transform = 'translate3d(0,' + y + 'px,0)';
+      if (mobile.matches) {
+        heroBg.style.transform = 'none';
+      } else {
+        var heroH = hero.offsetHeight || 1;
+        var y = Math.min(Math.max(scrollY, 0), heroH) * 0.28;
+        heroBg.style.transform = 'translate3d(0,' + y + 'px,0)';
+      }
     }
 
     if (!timeline || !progress) return;

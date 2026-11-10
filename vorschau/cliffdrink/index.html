@@ -2,13 +2,15 @@
 <html lang="de-CH">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#050d16">
 <meta name="robots" content="noindex, nofollow, noarchive">
 <title>CliffDrink · Tee in Teebeuteln [Entwurf]</title>
 <link rel="preload" href="fonts/geist.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="css/style.css">
+<script>document.documentElement.classList.add('js')</script>
 </head>
-<body>
+<body class="home">
 <div class="preview-banner" role="status">Entwurf – Vorschau für CliffDrink, nicht öffentlich</div>
 <header class="site-head">
   <div class="wrap">
@@ -20,8 +22,26 @@
         <li><a href="./index.html#kontakt">Kontakt</a></li>
       </ul>
     </nav>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mnav" aria-label="Menü öffnen">
+      <span class="nav-toggle-box" aria-hidden="true"><span></span><span></span><span></span></span>
+    </button>
   </div>
 </header>
+<div class="mnav" id="mnav">
+  <nav class="mnav-inner" aria-label="Menü">
+    <p class="eyebrow mnav-eyebrow">Menü</p>
+    <ul class="mnav-list">
+      <li><a href="#sortiment"><span class="mnav-num">01</span><span class="mnav-label">Sortiment</span></a></li>
+      <li><a href="#geschichte"><span class="mnav-num">02</span><span class="mnav-label">Geschichte</span></a></li>
+      <li><a href="#kontakt"><span class="mnav-num">03</span><span class="mnav-label">Kontakt</span></a></li>
+    </ul>
+    <p class="mnav-tag">Not just tea. A statement.</p>
+  </nav>
+  <svg class="mnav-art" viewBox="0 0 400 160" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+    <path class="mnav-fill" d="M0 126 L52 102 L100 124 L168 66 L226 112 L270 92 L320 122 L372 84 L400 100 L400 170 L0 170 Z"/>
+    <path class="mnav-crest" d="M0 126 L52 102 L100 124 L168 66 L226 112 L270 92 L320 122 L372 84 L400 100" fill="none"/>
+  </svg>
+</div>
 <main>
 <section class="hero" aria-label="Einstieg">
   <div class="hero-bg" role="img" aria-label="CliffDrink Logo: Bergspitze im blauen Kreis mit goldenem Ring, darunter zwei Teeblätter"></div>
@@ -35,6 +55,10 @@
   <svg class="cliff-svg-front" viewBox="0 0 1440 80" preserveAspectRatio="none" focusable="false">
     <path class="cliff-fill" d="M0 100 L0 48 L90 36 L180 52 L290 10 L400 50 L510 22 L620 54 L730 4 L850 48 L960 18 L1070 52 L1180 12 L1290 46 L1380 24 L1440 40 L1440 100 Z"/>
     <path class="cliff-ridge" d="M0 48 L90 36 L180 52 L290 10 L400 50 L510 22 L620 54 L730 4 L850 48 L960 18 L1070 52 L1180 12 L1290 46 L1380 24 L1440 40" fill="none"/>
+  </svg>
+  <svg class="cliff-svg-mobile" viewBox="0 0 400 80" preserveAspectRatio="none" focusable="false">
+    <path class="cliff-fill" d="M0 100 L0 52 L44 38 L92 56 L150 12 L206 50 L250 30 L298 56 L350 16 L400 42 L400 100 Z"/>
+    <path class="cliff-ridge" d="M0 52 L44 38 L92 56 L150 12 L206 50 L250 30 L298 56 L350 16 L400 42" fill="none"/>
   </svg>
 </div>
 
@@ -108,6 +132,10 @@
     <path class="cliff-fill" d="M0 100 L0 48 L90 36 L180 52 L290 10 L400 50 L510 22 L620 54 L730 4 L850 48 L960 18 L1070 52 L1180 12 L1290 46 L1380 24 L1440 40 L1440 100 Z"/>
     <path class="cliff-ridge" d="M0 48 L90 36 L180 52 L290 10 L400 50 L510 22 L620 54 L730 4 L850 48 L960 18 L1070 52 L1180 12 L1290 46 L1380 24 L1440 40" fill="none"/>
   </svg>
+  <svg class="cliff-svg-mobile cliff-svg-mobile--flip" viewBox="0 0 400 80" preserveAspectRatio="none" focusable="false">
+    <path class="cliff-fill" d="M0 100 L0 52 L44 38 L92 56 L150 12 L206 50 L250 30 L298 56 L350 16 L400 42 L400 100 Z"/>
+    <path class="cliff-ridge" d="M0 52 L44 38 L92 56 L150 12 L206 50 L250 30 L298 56 L350 16 L400 42" fill="none"/>
+  </svg>
 </div>
 
 <section class="story" id="geschichte">
@@ -171,6 +199,10 @@
     <path class="cliff-fill" d="M0 100 L0 48 L90 36 L180 52 L290 10 L400 50 L510 22 L620 54 L730 4 L850 48 L960 18 L1070 52 L1180 12 L1290 46 L1380 24 L1440 40 L1440 100 Z"/>
     <path class="cliff-ridge" d="M0 48 L90 36 L180 52 L290 10 L400 50 L510 22 L620 54 L730 4 L850 48 L960 18 L1070 52 L1180 12 L1290 46 L1380 24 L1440 40" fill="none"/>
   </svg>
+  <svg class="cliff-svg-mobile" viewBox="0 0 400 80" preserveAspectRatio="none" focusable="false">
+    <path class="cliff-fill" d="M0 100 L0 52 L44 38 L92 56 L150 12 L206 50 L250 30 L298 56 L350 16 L400 42 L400 100 Z"/>
+    <path class="cliff-ridge" d="M0 52 L44 38 L92 56 L150 12 L206 50 L250 30 L298 56 L350 16 L400 42" fill="none"/>
+  </svg>
 </div>
 
 <section class="contact band-deep" id="kontakt">
@@ -219,5 +251,6 @@
 </footer>
 <script src="js/form.js" defer></script>
 <script src="js/motion.js" defer></script>
+<script src="js/menu.js" defer></script>
 </body>
 </html>
