@@ -258,6 +258,32 @@ html.js:not(.reduced-motion) .tea.reveal[data-delay="5"]{transition-delay:350ms}
 .mnav-crest{stroke:var(--gold);stroke-opacity:.75;stroke-width:1.5;stroke-linejoin:round;stroke-linecap:round;vector-effect:non-scaling-stroke}
 [tabindex="-1"]:focus{outline:none}
 
+/* Grosse Bildschirme (ab 1600 CSS-px, z. B. 4K mit 150 % = 2560): Schrift wächst mit, Inhalt nutzt die Breite */
+@media (min-width:1600px){
+  html{font-size:clamp(16px,calc(6px + .625vw),30px)}
+  :root{--wrap:min(calc(1160px + (100vw - 1600px)*.75),100rem)}
+  .cliff-divider{height:6.67vw}
+  .timeline{max-width:60rem}
+  .cform{max-width:47.5rem}
+  .legal .wrap{max-width:47.5rem}
+}
+@media (min-width:1800px){
+  /* Geschichte zweispaltig: Gruppenfoto links (bleibt stehen), Zeitstrahl rechts */
+  .story .wrap{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);column-gap:clamp(3rem,4vw,6rem);align-items:start}
+  .story .section-head{grid-column:1/-1}
+  .story-pic.team-group{grid-column:1;position:sticky;top:calc(4.25rem + 2.5rem);margin:0}
+  .team-group img{aspect-ratio:3/2}
+  .timeline{grid-column:2;max-width:none;width:100%;margin:-1.6rem 0 0}
+  /* Kontakt zweispaltig: Überschrift + E-Mail links, Formular rechts */
+  .contact .wrap{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);column-gap:clamp(3rem,5vw,7rem);align-items:start;grid-template-rows:auto 1fr}
+  .contact .section-head{grid-column:1;grid-row:1}
+  .contact .grid{grid-column:1;grid-row:2;align-self:start}
+  .contact .cform{grid-column:2;grid-row:1/span 2;margin-top:0;max-width:none}
+}
+@media (min-width:2200px){
+  .teas{grid-template-columns:repeat(6,minmax(0,1fr))}
+}
+
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   .hero-bg,.hero-content .lead,.reveal,.timeline-progress,.timeline-tip,.tl-dot,.tl-pulse,.tl-body h3,.tl-body p,.member{
