@@ -36,7 +36,8 @@ h2{font-size:clamp(2rem,3.6vw,2.9rem)}
 .brand span{color:var(--blue-light)}
 .nav{display:flex;gap:clamp(1.1rem,3vw,2.4rem);margin:0;padding:0;list-style:none}
 .nav a{color:var(--silver);text-decoration:none;font-size:.95rem;padding:.35rem 0;border-bottom:1px solid transparent;transition:border-color .2s,color .2s}
-.nav a:hover,.nav a[aria-current]{color:#fff;border-bottom-color:var(--gold)}
+.nav a[aria-current]{color:#fff;border-bottom-color:var(--gold)}
+@media (hover:hover) and (pointer:fine){.nav a:hover{color:#fff;border-bottom-color:var(--gold)}}
 
 /* Einstieg */
 .hero{--head:calc(4.25rem + 1px);position:relative;overflow:hidden;text-align:center;background:var(--navy);
@@ -224,6 +225,8 @@ html.js:not(.reduced-motion) .tea.reveal[data-delay="5"]{transition-delay:350ms}
 }
 .nav-toggle{position:relative;width:44px;height:44px;margin-right:-.6rem;align-items:center;justify-content:center;padding:0;background:transparent;border:0;border-radius:50%;color:var(--heading);cursor:pointer;-webkit-tap-highlight-color:transparent}
 .nav-toggle:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.nav-toggle:focus:not(:focus-visible),.mnav-list a:focus:not(:focus-visible),.mnav a:focus:not(:focus-visible){outline:none}
+.nav-toggle::-moz-focus-inner{border:0}
 .nav-toggle-box{position:relative;display:block;width:24px;height:14px}
 .nav-toggle-box span{position:absolute;right:0;height:1.5px;border-radius:2px;background:currentColor;transition:transform .45s cubic-bezier(.65,0,.35,1),opacity .2s ease,width .35s cubic-bezier(.65,0,.35,1)}
 .nav-toggle-box span:nth-child(1){top:0;width:24px}
@@ -244,7 +247,7 @@ html.js:not(.reduced-motion) .tea.reveal[data-delay="5"]{transition-delay:350ms}
 .mnav-list{list-style:none;margin:0;padding:0;border-top:1px solid rgba(159,176,195,.12)}
 .mnav-list li{border-bottom:1px solid rgba(159,176,195,.12)}
 .mnav-list a{display:flex;align-items:baseline;gap:1.1rem;padding:1.05rem 0;color:var(--heading);text-decoration:none;font-family:var(--serif);font-size:clamp(2rem,9.5vw,2.55rem);line-height:1.1;font-variation-settings:"SOFT" 50,"opsz" 72;-webkit-tap-highlight-color:transparent}
-.mnav-list a:active{color:var(--gold)}
+@media (hover:hover) and (pointer:fine){.mnav-list a:hover{color:var(--gold)}}
 .mnav-list a:focus-visible{outline:2px solid var(--gold);outline-offset:4px;border-radius:4px}
 .mnav-num{font-family:var(--sans);font-size:.72rem;letter-spacing:.18em;color:var(--gold);min-width:1.6rem;transform:translateY(-.4em)}
 .mnav-eyebrow,.mnav-list li{opacity:0;transform:translateY(14px);transition:opacity .25s ease,transform .25s ease}
