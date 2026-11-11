@@ -212,15 +212,14 @@ html.js:not(.reduced-motion) .tea.reveal[data-delay="5"]{transition-delay:350ms}
 @media (min-width:601px){.hero{padding-bottom:clamp(2rem,4.5vh,4rem)}}
 
 /* Instagram oben (Kopfzeile + Menü), dezent, ohne Anhebung */
-.head-ig{order:3;display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;margin:0 -.4rem 0 .6rem;color:var(--silver);border-radius:50%;-webkit-tap-highlight-color:transparent;transition:color .2s ease}
+.head-ig{order:3;display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;margin:0 -.4rem 0 .6rem;color:var(--silver);border-radius:50%;-webkit-tap-highlight-color:transparent;transition:opacity .2s ease}
 .site-head .wrap > nav{margin-left:auto}
 .site-head .wrap > .nav-toggle{order:4}
 .head-ig:focus:not(:focus-visible){outline:none}
 .head-ig:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
-@media (hover:hover) and (pointer:fine){.head-ig:hover{color:var(--gold)}}
+@media (hover:hover) and (pointer:fine){.head-ig:hover,.mnav-ig:hover{opacity:.85}}
 .mnav-ig{display:inline-flex;align-items:center;gap:.65rem;margin-top:1.6rem;color:var(--silver);text-decoration:none;font-size:1rem;letter-spacing:.02em;-webkit-tap-highlight-color:transparent;opacity:0;transform:translateY(14px);transition:opacity .25s ease,transform .25s ease}
 .mnav.is-open .mnav-ig{opacity:1;transform:none;transition:opacity .5s ease .46s,transform .6s cubic-bezier(.2,.7,.2,1) .46s}
-.mnav-ig svg{color:var(--gold)}
 .mnav-ig:focus:not(:focus-visible){outline:none}
 .mnav-ig:focus-visible{outline:2px solid var(--gold);outline-offset:4px;border-radius:4px}
 @media (max-width:600px){
