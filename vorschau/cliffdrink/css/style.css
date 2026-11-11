@@ -32,8 +32,8 @@ h2{font-size:clamp(2rem,3.6vw,2.9rem)}
 /* Kopfzeile */
 .site-head{position:sticky;top:0;z-index:10;background:rgba(5,13,22,.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(159,176,195,.12)}
 .site-head .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:4.25rem;flex-wrap:wrap}
-.brand{display:inline-flex;align-items:center;line-height:0;text-decoration:none;-webkit-tap-highlight-color:transparent}
-.brand img{display:block;height:3rem;width:auto}
+.brand{font-family:var(--sans);font-weight:700;font-style:italic;letter-spacing:.01em;font-size:1.2rem;text-decoration:none;color:var(--silver);-webkit-tap-highlight-color:transparent}
+.brand span{color:var(--blue-light)}
 .brand:focus:not(:focus-visible){outline:none}
 .brand:focus-visible{outline:2px solid var(--gold);outline-offset:4px;border-radius:6px}
 .nav{display:flex;gap:clamp(1.1rem,3vw,2.4rem);margin:0;padding:0;list-style:none}
@@ -230,7 +230,7 @@ html.js:not(.reduced-motion) .tea.reveal[data-delay="5"]{transition-delay:350ms}
 
 .foot-brand{display:inline-flex;align-items:center;gap:.9rem}
 .foot-brand img{height:2.4rem;width:auto;display:block}
-@media (max-width:600px){.brand img{height:2.5rem}.foot-brand{flex-direction:column;align-items:flex-start;gap:.6rem}}
+@media (max-width:600px){.foot-brand{flex-direction:column;align-items:flex-start;gap:.6rem}}
 
 /* Mobiles Menü (nur Startseite) */
 .nav-toggle,.mnav{display:none}
