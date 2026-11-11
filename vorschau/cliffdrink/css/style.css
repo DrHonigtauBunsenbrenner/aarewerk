@@ -32,8 +32,10 @@ h2{font-size:clamp(2rem,3.6vw,2.9rem)}
 /* Kopfzeile */
 .site-head{position:sticky;top:0;z-index:10;background:rgba(5,13,22,.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(159,176,195,.12)}
 .site-head .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:4.25rem;flex-wrap:wrap}
-.brand{font-family:var(--sans);font-weight:700;font-style:italic;letter-spacing:.01em;font-size:1.2rem;text-decoration:none;color:var(--silver)}
-.brand span{color:var(--blue-light)}
+.brand{display:inline-flex;align-items:center;line-height:0;text-decoration:none;-webkit-tap-highlight-color:transparent}
+.brand img{display:block;height:3rem;width:auto}
+.brand:focus:not(:focus-visible){outline:none}
+.brand:focus-visible{outline:2px solid var(--gold);outline-offset:4px;border-radius:6px}
 .nav{display:flex;gap:clamp(1.1rem,3vw,2.4rem);margin:0;padding:0;list-style:none}
 .nav a{color:var(--silver);text-decoration:none;font-size:.95rem;padding:.35rem 0;border-bottom:1px solid transparent;transition:border-color .2s,color .2s}
 .nav a[aria-current]{color:#fff;border-bottom-color:var(--gold)}
@@ -42,12 +44,13 @@ h2{font-size:clamp(2rem,3.6vw,2.9rem)}
 /* Einstieg */
 .hero{--head:calc(4.25rem + 1px);position:relative;overflow:hidden;text-align:center;background:var(--navy);
   margin-top:calc(var(--head)*-1);min-height:max(560px,100vh);min-height:max(560px,100svh);
-  display:flex;flex-direction:column;justify-content:flex-end;padding:calc(var(--head) + 2rem) 0 clamp(2.5rem,7vh,5rem)}
-.hero-bg{position:absolute;inset:0;background:url(../img/logo-hero.webp) center 30%/cover no-repeat;
+  display:flex;flex-direction:column;justify-content:center;padding:calc(var(--head) + 2rem) 0 clamp(2.5rem,7vh,5rem)}
+.hero-title{margin:0 0 clamp(1.5rem,3.5vh,2.5rem);line-height:0}
+.hero-logo{display:block;width:min(44rem,72vw);height:auto;margin:0 auto}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(60% 55% at 50% 42%,rgba(45,118,179,.16),rgba(45,118,179,0) 70%),linear-gradient(180deg,var(--navy-deep) 0%,#0a1626 55%,var(--navy) 100%);
   transform:scale(1.04);transform-origin:center 30%;opacity:1;will-change:transform}
 .hero::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:
   linear-gradient(to bottom,rgba(13,27,46,.55) 0,rgba(13,27,46,0) calc(var(--head) + 6%),rgba(13,27,46,0) 58%,rgba(13,27,46,.18) 66%,rgba(13,27,46,.5) 76%,rgba(13,27,46,.82) 87%,var(--navy) 100%)}
-@media (min-width:1600px),(min-resolution:1.5dppx) and (min-width:1000px){.hero-bg{background-image:url(../img/logo-hero-2560.webp)}}
 .hero .wrap{position:relative;z-index:2}
 .hero .wrap::before{content:"";position:absolute;z-index:-1;left:50%;top:50%;width:min(56rem,100%);height:150%;transform:translate(-50%,-50%);pointer-events:none;background:radial-gradient(closest-side,rgba(13,27,46,.72),rgba(13,27,46,.4) 55%,rgba(13,27,46,0))}
 .hero .lead{text-shadow:0 1px 12px rgba(9,19,31,.8);font-family:var(--serif);font-size:clamp(1.3rem,2.2vw,1.65rem);line-height:1.4;max-width:28ch;margin:0 auto;color:var(--silver)}
@@ -56,19 +59,20 @@ h2{font-size:clamp(2rem,3.6vw,2.9rem)}
 .btn.ghost{background:transparent;color:var(--silver);box-shadow:inset 0 0 0 1px rgba(214,221,229,.35)}
 .btn.ghost:hover{background:rgba(214,221,229,.06)}
 @media (max-width:600px){
-  /* Mobil: Bild beginnt bündig oben, Kopfzeile liegt darüber; oberer Rand läuft weich in Navy-Deep aus (= html-Hintergrund, auch beim iOS-Überziehen) */
+  /* Mobil: Hero beginnt bündig oben, Kopfzeile liegt darüber; oben Navy-Deep (= html-Hintergrund, auch beim iOS-Überziehen) */
   .hero{--head:0px;--top:calc(3.5rem + env(safe-area-inset-top,0px));margin-top:0;min-height:0;background:var(--navy-deep);
-    padding:calc(var(--top) + min(84vw,400px)) 0 3rem}
-  .hero-bg{inset:0 0 auto;height:calc(var(--top) + min(100vw,470px));transform-origin:center top;
-    background:linear-gradient(to bottom,var(--navy-deep) 0,var(--navy-deep) var(--top),rgba(5,13,22,.55) calc(var(--top) + 1.75rem),rgba(5,13,22,0) calc(var(--top) + 4.5rem)),
-      url(../img/logo-hero.webp) center var(--top)/150% auto no-repeat,var(--navy-deep)}
-  .hero::before{background:linear-gradient(to bottom,rgba(13,27,46,0) 0,rgba(13,27,46,0) calc(var(--top) + min(56vw,260px)),rgba(13,27,46,.6) calc(var(--top) + min(78vw,370px)),var(--navy) calc(var(--top) + min(100vw,470px)))}
+    padding:calc(var(--top) + 3rem) 0 3.5rem}
+  .hero-bg{transform-origin:center top}
+  .hero::before{background:linear-gradient(to bottom,rgba(13,27,46,0) 0,rgba(13,27,46,0) 70%,var(--navy) 100%)}
+  .hero-logo{width:min(86vw,24rem)}
+  .hero-title{margin-bottom:1.75rem}
 }
 
 /* Hero intro */
 html.js:not(.reduced-motion) .hero-bg{opacity:0}
 html.js:not(.reduced-motion) .hero.is-ready .hero-bg{animation:heroBgIn 1.6s cubic-bezier(.22,.61,.36,1) forwards}
-html.js:not(.reduced-motion) .hero-content .lead{opacity:0;transform:translateY(12px)}
+html.js:not(.reduced-motion) .hero-content .lead,html.js:not(.reduced-motion) .hero-logo{opacity:0;transform:translateY(12px)}
+html.js:not(.reduced-motion) .hero.is-ready .hero-logo{animation:heroCopyIn .9s ease .25s forwards}
 html.js:not(.reduced-motion) .hero.is-ready .hero-content .lead{animation:heroCopyIn .8s ease .9s forwards}
 @keyframes heroBgIn{from{opacity:0;transform:scale(1.04)}to{opacity:1;transform:scale(1)}}
 @keyframes heroCopyIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
@@ -224,6 +228,10 @@ html.js:not(.reduced-motion) .tea.reveal[data-delay="5"]{transition-delay:350ms}
   html.js .home .head-ig{margin-right:0}
 }
 
+.foot-brand{display:inline-flex;align-items:center;gap:.9rem}
+.foot-brand img{height:2.4rem;width:auto;display:block}
+@media (max-width:600px){.brand img{height:2.5rem}.foot-brand{flex-direction:column;align-items:flex-start;gap:.6rem}}
+
 /* Mobiles Menü (nur Startseite) */
 .nav-toggle,.mnav{display:none}
 @media (max-width:600px){
@@ -302,7 +310,7 @@ html.js:not(.reduced-motion) .tea.reveal[data-delay="5"]{transition-delay:350ms}
 
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
-  .hero-bg,.hero-content .lead,.reveal,.timeline-progress,.timeline-tip,.tl-dot,.tl-pulse,.tl-body h3,.tl-body p,.member{
+  .hero-bg,.hero-content .lead,.hero-logo,.reveal,.timeline-progress,.timeline-tip,.tl-dot,.tl-pulse,.tl-body h3,.tl-body p,.member{
     animation:none!important;transition:none!important;opacity:1!important;transform:none!important;clip-path:none!important
   }
   .timeline-progress{transform:scaleY(1)!important}
