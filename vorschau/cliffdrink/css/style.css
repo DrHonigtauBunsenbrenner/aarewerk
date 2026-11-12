@@ -32,8 +32,8 @@ h2{font-size:clamp(2rem,3.6vw,2.9rem)}
 /* Kopfzeile */
 .site-head{position:sticky;top:0;z-index:10;background:rgba(5,13,22,.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(159,176,195,.12)}
 .site-head .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:4.25rem;flex-wrap:wrap}
-.brand{font-family:var(--sans);font-weight:700;font-style:italic;letter-spacing:.01em;font-size:1.2rem;text-decoration:none;color:var(--silver);-webkit-tap-highlight-color:transparent}
-.brand span{color:var(--blue-light)}
+.brand{font-family:var(--sans);font-weight:700;font-style:italic;letter-spacing:.01em;font-size:1.2rem;text-decoration:none;color:#937F58;-webkit-tap-highlight-color:transparent}
+.brand span{color:#B9C2C4}
 .brand:focus:not(:focus-visible){outline:none}
 .brand:focus-visible{outline:2px solid var(--gold);outline-offset:4px;border-radius:6px}
 .nav{display:flex;gap:clamp(1.1rem,3vw,2.4rem);margin:0;padding:0;list-style:none}
