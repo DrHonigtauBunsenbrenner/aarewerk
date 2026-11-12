@@ -325,3 +325,33 @@ body{padding-bottom:2.6rem}
 .media-note{margin:1.1rem 0 0;font-size:.82rem;color:var(--muted);max-width:44ch}
 .tl-item .media-note{margin-top:1rem;padding-left:2.75rem}
 .cform .btn:disabled{opacity:.7;cursor:not-allowed;background:rgba(45,118,179,.45)}
+
+/* ---- Hero Desktop: Dämmerung, Bergfront mit Goldgrat, Knopf ---- */
+.hero-cta{margin:clamp(1.6rem,3.5vh,2.4rem) 0 0}
+.hero-btn{display:inline-block;padding:.8rem 1.7rem;border-radius:999px;text-decoration:none;font-weight:500;font-size:.98rem;letter-spacing:.02em;color:var(--heading,#f3efe6);
+  background:rgba(201,162,94,.12);box-shadow:inset 0 0 0 1px rgba(214,178,112,.6);transition:background-color .25s,box-shadow .25s;-webkit-tap-highlight-color:transparent}
+.hero-btn:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+@media (hover:hover) and (pointer:fine){.hero-btn:hover{background:rgba(201,162,94,.22);box-shadow:inset 0 0 0 1px rgba(214,178,112,.85)}}
+html.js:not(.reduced-motion) .hero-cta{opacity:0;transform:translateY(12px)}
+html.js:not(.reduced-motion) .hero.is-ready .hero-cta{animation:heroCopyIn .8s ease 1.2s forwards}
+@media (prefers-reduced-motion:reduce){.hero-cta{opacity:1!important;transform:none!important;animation:none!important}}
+@media (max-width:600px){.hero-cta{display:none}}
+.hero-range{display:none}
+@media (min-width:601px){
+  .hero--c .hero-bg{background:
+    radial-gradient(1px 1px at 12% 18%,rgba(255,255,255,.7),transparent),radial-gradient(1px 1px at 27% 9%,rgba(255,255,255,.5),transparent),
+    radial-gradient(1.5px 1.5px at 41% 22%,rgba(255,255,255,.6),transparent),radial-gradient(1px 1px at 58% 12%,rgba(255,255,255,.55),transparent),
+    radial-gradient(1px 1px at 69% 27%,rgba(255,255,255,.45),transparent),radial-gradient(1.5px 1.5px at 83% 15%,rgba(255,255,255,.6),transparent),
+    radial-gradient(1px 1px at 92% 31%,rgba(255,255,255,.45),transparent),radial-gradient(1px 1px at 6% 36%,rgba(255,255,255,.4),transparent),
+    radial-gradient(1px 1px at 35% 38%,rgba(255,255,255,.35),transparent),radial-gradient(1px 1px at 76% 6%,rgba(255,255,255,.5),transparent),
+    radial-gradient(60% 40% at 50% 92%,rgba(214,160,96,.30),rgba(214,160,96,0) 70%),
+    linear-gradient(180deg,#050c18 0%,#0b1a2e 40%,#1a2d48 66%,#3a3a55 82%,#4a4258 100%)}
+  .hero--c::before{background:linear-gradient(to bottom,rgba(13,27,46,.5) 0,rgba(13,27,46,0) calc(var(--head) + 6%))}
+  .hero--c .wrap::before{background:radial-gradient(closest-side,rgba(8,16,28,.45),rgba(8,16,28,0))}
+  .hero--c{justify-content:flex-start;padding-top:calc(var(--head) + max(3rem,12vh));padding-bottom:calc(24vw + 2rem)}
+  .hero--c .hero-logo{width:min(34rem,46vw)}
+  .hero-range{display:block;position:absolute;left:0;right:0;bottom:-1px;width:100%;height:24vw;z-index:1;pointer-events:none}
+  .hr-front{fill:var(--navy-deep)}
+  .hr-crest{fill:none;stroke:var(--gold);stroke-width:2;vector-effect:non-scaling-stroke;opacity:.85}
+  .hero--c + .cliff-divider{display:none}
+}
