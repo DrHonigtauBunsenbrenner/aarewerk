@@ -319,7 +319,8 @@ html.js:not(.reduced-motion) .tea.reveal[data-delay="5"]{transition-delay:350ms}
 
 /* Vorschau-Hinweis (nur auf uferwerk.ch/vorschau/cliffdrink/) */
 .preview-banner{position:fixed;left:0;right:0;bottom:0;z-index:20;padding:.45rem .9rem;font-size:.78rem;line-height:1.4;text-align:center;color:#e8e8e8;background:#666666;border-top:1px solid rgba(232,232,232,.25)}
-body{padding-bottom:2.6rem}
+body{padding-bottom:0}
+.site-foot{padding-bottom:calc(2.5rem + 2.6rem)}
 .media-note{margin:1.1rem 0 0;font-size:.82rem;color:var(--muted);max-width:44ch}
 .tl-item .media-note{margin-top:1rem;padding-left:2.75rem}
 .cform .btn:disabled{opacity:1;cursor:not-allowed;background:#b9c2c4;color:#3c3c3c}
