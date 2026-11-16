@@ -1,2 +1,2 @@
-Geist (Vercel) und Fraunces (Undercase Type) stehen unter der SIL Open Font License 1.1.
-Beide Schriften sind lokal eingebunden (Teilmenge Latin, woff2).
+Geist (Vercel), Fraunces (Undercase Type), Lora (Cyreal) und Nunito Sans (Vernon Adams, Jacques Le Bailly u. a.) stehen unter der SIL Open Font License 1.1.
+Alle Schriften sind lokal eingebunden (Teilmenge Latin, woff2), ohne Verbindung zu Google.

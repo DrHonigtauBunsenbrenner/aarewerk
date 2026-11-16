@@ -1,5 +1,3 @@
-@font-face{font-family:"Geist";src:url(../fonts/geist.woff2) format("woff2");font-weight:100 900;font-display:swap}
-@font-face{font-family:"Fraunces";src:url(../fonts/fraunces.woff2) format("woff2");font-weight:100 900;font-display:swap}
 
 :root{
   --navy:#0d1b2e;
@@ -320,11 +318,11 @@ html.js:not(.reduced-motion) .tea.reveal[data-delay="5"]{transition-delay:350ms}
 }
 
 /* Vorschau-Hinweis (nur auf uferwerk.ch/vorschau/cliffdrink/) */
-.preview-banner{position:fixed;left:0;right:0;bottom:0;z-index:20;padding:.45rem .9rem;font-size:.78rem;line-height:1.4;text-align:center;color:var(--muted);background:rgba(5,13,22,.94);border-top:1px solid rgba(159,176,195,.16)}
+.preview-banner{position:fixed;left:0;right:0;bottom:0;z-index:20;padding:.45rem .9rem;font-size:.78rem;line-height:1.4;text-align:center;color:#e8e8e8;background:#666666;border-top:1px solid rgba(232,232,232,.25)}
 body{padding-bottom:2.6rem}
 .media-note{margin:1.1rem 0 0;font-size:.82rem;color:var(--muted);max-width:44ch}
 .tl-item .media-note{margin-top:1rem;padding-left:2.75rem}
-.cform .btn:disabled{opacity:.7;cursor:not-allowed;background:rgba(45,118,179,.45)}
+.cform .btn:disabled{opacity:1;cursor:not-allowed;background:#b9c2c4;color:#3c3c3c}
 
 /* ---- Hero Desktop: Dämmerung, Bergfront mit Goldgrat, Knopf ---- */
 .hero-cta{margin:clamp(1.6rem,3.5vh,2.4rem) 0 0}
@@ -355,3 +353,141 @@ html.js:not(.reduced-motion) .hero.is-ready .hero-cta{animation:heroCopyIn .8s e
   .hr-crest{fill:none;stroke:var(--gold);stroke-width:2;vector-effect:non-scaling-stroke;opacity:.85}
   .hero--c + .cliff-divider{display:none}
 }
+
+/* =====================================================================
+   Farbvariante «Tibor» (Branch farben-tibor, Entwurf zum Vergleich)
+   Palette (Word-Datei Tibor, 03.11.2026):
+     Hintergrund/Footer-Text #e8e8e8 · Hellgrau (aktive Knöpfe) #b9c2c4
+     Grau (Fliesstext/Footer) #6d6d6d · Gold (Überschriften/Knöpfe) #947f57
+   Kontrast-Anpassungen (WCAG AA, kleiner Text >= 4.5:1):
+     Fliesstext  #6d6d6d -> #636363 (4.22 -> 4.90 auf #e8e8e8)
+     Gold klein  #947f57 -> #706142 (3.15 -> 4.93 auf #e8e8e8) für Eyebrows, Links, Namen
+     Knopf       #947f57 -> #85724e (Weiss darauf 3.87 -> 4.65)
+     Footer      #6d6d6d -> #666666 (#e8e8e8 darauf 4.22 -> 4.69)
+   Original #947f57 nur für grosse Überschriften (>= 24 px, 3.15:1) und Linien/Flächen.
+   ===================================================================== */
+@font-face{font-family:"Lora";src:url(../fonts/lora.woff2) format("woff2");font-weight:400 700;font-style:normal;font-display:swap}
+@font-face{font-family:"Nunito Sans";src:url(../fonts/nunito-sans.woff2) format("woff2");font-weight:200 1000;font-style:normal;font-display:swap}
+:root{
+  --t-bg:#e8e8e8;--t-bg-2:#f3f3f3;--t-hell:#b9c2c4;--t-grau:#6d6d6d;--t-gold:#947f57;
+  --t-text:#636363;--t-text-strong:#4a4a4a;--t-gold-text:#706142;--t-btn:#85724e;--t-foot:#666666;
+  --t-sky:#d9dfe0;--t-line:rgba(109,109,109,.2);
+  --navy:var(--t-bg);--navy-deep:var(--t-bg-2);--navy-soft:#dcdcdc;
+  --silver:var(--t-text);--muted:var(--t-text);--heading:var(--t-gold);--gold:var(--t-gold);
+  --blue:var(--t-btn);--blue-hover:var(--t-btn);--blue-light:var(--t-gold-text);
+  --serif:"Lora",Georgia,serif;--sans:"Nunito Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+html{background:var(--t-bg)}
+body{background:var(--t-bg);color:var(--t-text)}
+h1,h2,h3,h4{font-variation-settings:normal;font-weight:500}
+h4,.member h4{color:var(--t-gold-text)}
+.eyebrow,.mnav-num{color:var(--t-gold-text)}
+a{color:var(--t-gold-text)}
+section,.story,.band-deep{background-image:none}
+section,.story{background-color:var(--t-bg)}
+.band-deep{background-color:var(--t-bg-2)}
+::selection{background:var(--t-hell);color:#2f2f2f}
+
+/* Kopfzeile: Text in Logofarben, «Drink» in Grau (Silber #b9c2c4 hätte auf Hell nur 1.48:1) */
+.site-head{background:rgba(232,232,232,.92);border-bottom-color:var(--t-line)}
+.brand{color:#937F58;font-weight:800}
+.brand span{color:var(--t-grau)}
+.nav a{color:var(--t-text)}
+.nav a[aria-current]{color:var(--t-text-strong)}
+@media (hover:hover) and (pointer:fine){.nav a:hover{color:var(--t-text-strong)}}
+.nav-toggle{color:var(--t-text-strong)}
+@media (max-width:600px){
+  .home .site-head.is-scrolled{background:rgba(232,232,232,.94);border-bottom-color:var(--t-line)}
+}
+
+/* Hero: heller Himmel, eine statische Bergfront mit Goldgrat */
+.hero{background:var(--t-bg)}
+.hero-bg{background:radial-gradient(55% 45% at 50% 40%,rgba(255,255,255,.75),rgba(255,255,255,0) 70%),linear-gradient(180deg,var(--t-bg-2) 0%,var(--t-bg) 55%,var(--t-sky) 100%)}
+.hero::before{background:none}
+.hero .wrap::before{background:none}
+.hero .lead{color:var(--t-text-strong);text-shadow:none}
+@media (min-width:601px){
+  .hero--c .hero-bg{background:
+    radial-gradient(50% 40% at 50% 38%,rgba(255,255,255,.8),rgba(255,255,255,0) 70%),
+    radial-gradient(60% 35% at 50% 96%,rgba(148,127,87,.16),rgba(148,127,87,0) 70%),
+    linear-gradient(180deg,var(--t-bg-2) 0%,var(--t-bg) 45%,var(--t-sky) 100%)}
+  .hero--c::before,.hero--c .wrap::before{background:none}
+  .hr-front{fill:var(--t-bg-2)}
+  .hr-crest{stroke:var(--t-gold);opacity:1}
+}
+@media (max-width:600px){
+  .hero{background:var(--t-bg-2)}
+  .hero::before{background:none}
+}
+.hero-btn{color:#fff;background:var(--t-btn);box-shadow:none}
+.hero-btn:active{background:var(--t-hell);color:#3c3c3c}
+@media (hover:hover) and (pointer:fine){.hero-btn:hover{background:var(--t-hell);color:#3c3c3c;box-shadow:none}}
+.btn{background:var(--t-btn);color:#fff}
+.btn:hover,.btn:active{background:var(--t-hell);color:#3c3c3c}
+
+/* Berg-Trenner */
+.cliff-ridge{stroke:var(--t-gold);stroke-opacity:1}
+
+/* Sortiment: Bildfläche bleibt dunkel (Produktbilder sind auf #131d29 freigestellt), Textteil hell */
+.tea{background:#fff;border-color:var(--t-line);box-shadow:0 1px 2px rgba(0,0,0,.04)}
+.tea h3{color:var(--t-gold)}
+
+/* Zeitstrahl + Team */
+.timeline-track{background:rgba(148,127,87,.22)}
+.timeline-progress{background:linear-gradient(to bottom,rgba(148,127,87,.55),var(--t-gold))}
+.timeline-tip{background:var(--t-gold);box-shadow:0 0 6px 1px rgba(148,127,87,.35)}
+.tl-dot{box-shadow:0 0 0 4px rgba(148,127,87,.18)}
+html.js:not(.reduced-motion) .tl-dot{background:var(--t-bg-2);border-color:rgba(148,127,87,.5)}
+html.js:not(.reduced-motion) .tl-item.is-lit .tl-dot{box-shadow:0 0 0 4px rgba(148,127,87,.2)}
+.tl-pulse{border-color:rgba(148,127,87,.6)}
+.story-pic{background:var(--t-bg-2)}
+.member{background:#fff;border-color:var(--t-line)}
+
+/* Kontakt + Formular */
+.contact dd{color:var(--t-text-strong)}
+.cform input,.cform textarea{background:#fff;border-color:rgba(109,109,109,.35);color:var(--t-text-strong)}
+.cform input:focus,.cform textarea:focus{outline-color:var(--t-gold-text)}
+
+/* Tibors Bänder als Abschluss über dem Fuss (statisch) */
+.t-swoosh{display:block;width:100%;height:clamp(48px,7vw,120px);line-height:0;margin:0 0 -1px;background:var(--t-bg)}
+.t-swoosh svg{display:block;width:100%;height:100%}
+.t-sw-hell{fill:var(--t-hell)}.t-sw-gold{fill:var(--t-gold)}.t-sw-grau{fill:var(--t-foot)}
+.legal + .t-swoosh{background:var(--t-bg)}
+
+/* Fuss: Grau, Text #e8e8e8; Logo auf heller Plakette, da die graue Bergkontur sonst verschwindet */
+.site-foot{background:var(--t-foot);color:var(--t-bg);border-top:0}
+.site-foot a{color:var(--t-bg)}
+.site-foot a:hover{color:#fff}
+.foot-brand img{background:var(--t-bg);border-radius:10px;padding:.3rem .55rem;box-sizing:content-box}
+.foot-follow .ig:focus-visible{outline-color:var(--t-bg)}
+
+/* Rechtsseiten */
+.legal-back a{color:var(--t-text)}
+.legal-back a:hover{color:var(--t-gold-text)}
+
+/* Mobiles Menü hell */
+.mnav{background:radial-gradient(110% 55% at 100% 0%,rgba(148,127,87,.12),rgba(148,127,87,0) 62%),linear-gradient(168deg,#f6f6f6 0%,var(--t-bg) 50%,var(--t-sky) 100%)}
+.mnav-list,.mnav-list li{border-color:var(--t-line)}
+.mnav-list a{color:var(--t-gold);font-variation-settings:normal}
+@media (hover:hover) and (pointer:fine){.mnav-list a:hover{color:var(--t-gold-text)}}
+.mnav-fill{fill:var(--t-bg-2)}
+.mnav-crest{stroke:var(--t-gold);stroke-opacity:1}
+.t-swoosh--deep{background:var(--t-bg-2)}
+@media (max-width:600px){
+  /* Mobil schliesst der Hero in der Himmelfarbe des ersten Berg-Trenners (#e8e8e8) ab */
+  .hero-bg{background:radial-gradient(70% 45% at 50% 38%,rgba(255,255,255,.8),rgba(255,255,255,0) 70%),linear-gradient(180deg,var(--t-bg-2) 0%,var(--t-bg) 100%)}
+}
+/* Überschriften unter 24 px: dunkleres Gold für 4.5:1 */
+.tea h3,.legal h2{color:var(--t-gold-text)}
+.cform .small{opacity:1}
+
+/* ---- farben-tibor-final ---- */
+/* Teebilder: Hintergrund auf #e8e8e8 umgefärbt, Karte in derselben Farbe = nahtlos, ohne Rand um das Bild */
+.tea{background:var(--t-bg);border:0;box-shadow:none}
+.tea-pic{background:var(--t-bg)}
+.tea h3{color:var(--t-gold-text)}
+/* Footer-Logo: steht unverändert auf hellem Seitengrund direkt über den Bändern statt auf einer Plakette im Grau */
+.foot-logo{background:var(--t-bg);padding:clamp(1.5rem,3vw,2.5rem) 0 0}
+.foot-logo--deep{background:var(--t-bg-2)}
+.foot-logo img{display:block;height:clamp(3.4rem,5vw,4.6rem);width:auto}
+.foot-brand img{display:none}
