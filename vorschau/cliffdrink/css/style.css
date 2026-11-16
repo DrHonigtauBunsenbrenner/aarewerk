@@ -492,3 +492,9 @@ html.js:not(.reduced-motion) .tl-item.is-lit .tl-dot{box-shadow:0 0 0 4px rgba(1
 .foot-logo--deep{background:var(--t-bg-2)}
 .foot-logo img{display:block;height:clamp(3.4rem,5vw,4.6rem);width:auto}
 .foot-brand img{display:none}
+
+/* Instagram: Bild statt Vektorgrafik (Finn, 16.11.), dezent, ohne Anheben */
+.head-ig picture,.foot-follow .ig picture{display:block;line-height:0}
+.ig-img{display:block;border-radius:22.5%}
+.head-ig .ig-img{width:20px;height:20px}
+.foot-follow .ig .ig-img{width:32px;height:32px}
